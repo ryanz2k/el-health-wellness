@@ -39,7 +39,7 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
             height={50} 
             className={styles.logoImage}
           />
-          <span className={`${styles.logoText} gradient-text`}>EL Health</span>
+          <span className={`${styles.logoText} gradient-text`}>EL Health and Wellness</span>
         </Link>
         
         <button 
