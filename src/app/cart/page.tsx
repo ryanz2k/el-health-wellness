@@ -5,10 +5,12 @@ import styles from "./Cart.module.css";
 import Link from "next/link";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 
 export default function CartPage() {
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
   const { items, updateQuantity, removeItem, getTotals, clearCart } = useCartStore();
   const { total } = getTotals();
 
@@ -107,8 +109,11 @@ export default function CartPage() {
                   if (actions.order) {
                     const details = await actions.order.capture();
                     // Here we would typically save to the SQLite database
-                    alert("Transaction completed by " + details.payer?.name?.given_name);
-                    clearCart();
+                    
+                    const payerName = details.payer?.name?.given_name || "Customer";
+                    const orderId = details.id || data.orderID;
+                    
+                    router.push(`/checkout/success?name=${encodeURIComponent(payerName)}&orderId=${orderId}`);
                   }
                 }}
               />
