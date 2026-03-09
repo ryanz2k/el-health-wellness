@@ -1,0 +1,134 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding-bottom: 60px;
+}
+
+.card {
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  background: white;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(43, 122, 120, 0.15);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 240px;
+  background-color: var(--secondary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholderImage {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.productInfo {
+  padding: 24px;
+}
+
+.category {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.productName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 0px;
+}
+
+.addToCartBtn {
+  width: 100%;
+  padding: 12px;
+}
+
+.addedBtn {
+  background: #10b981;
+  color: white;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.addedBtn:hover {
+  transform: none;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  cursor: default;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.qtyBtn {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.qtyBtn:hover:not(:disabled) {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.qtyBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.qtyLabel {
+  font-weight: 600;
+  color: var(--text-dark);
+  min-width: 24px;
+  text-align: center;
+}

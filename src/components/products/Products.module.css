@@ -1,0 +1,152 @@
+.productsContainer {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 900px) {
+  .productsContainer {
+    flex-direction: column;
+  }
+}
+
+.mobileFilterToggle {
+  display: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mobileFilterHeader {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-dark);
+}
+
+.selectInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  cursor: pointer;
+}
+
+.filtersPane {
+  width: 280px;
+  flex-shrink: 0;
+  background: white;
+  padding: 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  max-height: calc(100vh - 120px);
+}
+
+@media (max-width: 900px) {
+  .mobileFilterToggle {
+    display: flex;
+  }
+  
+  .mobileFilterHeader {
+    display: flex;
+  }
+
+  .filtersPane {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    max-height: 100vh;
+    width: 85%;
+    max-width: 350px;
+    z-index: 1000;
+    transform: translateX(-100%);
+    border-radius: 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  }
+
+  .filtersPaneOpen {
+    transform: translateX(0);
+  }
+}
+
+.filterGroup {
+  margin-bottom: 25px;
+}
+
+.filterGroup h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.searchInput:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--secondary-color);
+}
+
+.categoryList {
+  list-style: none;
+}
+
+.categoryItem {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: var(--transition);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.categoryItem:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.categoryActive {
+  background: var(--primary-color);
+  color: white;
+  font-weight: 500;
+}
+
+.categoryActive:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.resultsArea {
+  flex: 1;
+}
+
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  color: var(--text-muted);
+}
