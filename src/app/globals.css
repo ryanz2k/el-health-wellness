@@ -1,18 +1,18 @@
 :root {
   --font-sans: 'Outfit', sans-serif;
   
-  --primary-color: #2b7a78; /* Deep teal/sage */
-  --primary-light: #3aafa9;
-  --secondary-color: #def2f1;
-  --background-light: #feffff;
-  --text-dark: #17252a;
-  --text-muted: #5b6f74;
+  --primary-color: #ff6b9e; /* Vibrant pink from logo vibe */
+  --primary-light: #ff9eba;
+  --secondary-color: #fff0f5; /* Very light pink */
+  --background-light: #ffffff; /* White */
+  --text-dark: #4a4a4a;
+  --text-muted: #8c8c8c;
   --white: #ffffff;
-  --accent: #f9a826; /* Warm contrast */
+  --accent: #ffd1dc; /* Light pink accent */
   
-  --shadow-sm: 0 4px 6px rgba(43, 122, 120, 0.05);
-  --shadow-md: 0 10px 20px rgba(43, 122, 120, 0.08);
-  --shadow-glass: 0 8px 32px 0 rgba(43, 122, 120, 0.1);
+  --shadow-sm: 0 4px 6px rgba(255, 107, 158, 0.05);
+  --shadow-md: 0 10px 20px rgba(255, 107, 158, 0.08);
+  --shadow-glass: 0 8px 32px 0 rgba(255, 107, 158, 0.1);
   
   --border-radius: 12px;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -50,7 +50,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-color), #4CAF50);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -73,12 +73,12 @@ body {
 .btn-primary {
   background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
   color: var(--white);
-  box-shadow: 0 4px 15px rgba(43, 122, 120, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 158, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(43, 122, 120, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 107, 158, 0.4);
 }
 
 .btn-outline {

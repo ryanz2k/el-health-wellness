@@ -1,23 +1,23 @@
-import { Building, Award, Heart } from "lucide-react";
+import { Sparkles, Award, Heart } from "lucide-react";
 
 export default function AboutPage() {
   return (
     <div className="container" style={{ padding: "60px 20px" }}>
       <div style={{ textAlign: "center", marginBottom: "60px", maxWidth: "800px", margin: "0 auto 60px" }}>
-        <h1 className="gradient-text" style={{ fontSize: "3rem", marginBottom: "20px" }}>About Us</h1>
+        <h1 className="gradient-text" style={{ fontSize: "3rem", marginBottom: "20px" }}>About EL Glamorous</h1>
         <p style={{ color: "var(--text-muted)", fontSize: "1.2rem", lineHeight: "1.8" }}>
-          Located at the heart of Mandaue, Cebu, EL Health and Wellness (operating as EL Glamorous Face and Body Clinic) is your premier destination for holistic skin care, pharmaceutical needs, and rejuvenating beauty therapies.
+          Founded in 2017, EL Glamorous Face and Body Clinic has grown from a single branch into a trusted beauty destination with four locations.
         </p>
       </div>
 
       <div className="grid-3">
         <div className="glass-panel animate-fade-up" style={{ padding: "40px" }}>
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px", color: "var(--primary-color)" }}>
-            <Building size={48} />
+            <Sparkles size={48} />
           </div>
-          <h3 style={{ textAlign: "center", marginBottom: "15px", color: "var(--text-dark)", fontSize: "1.3rem" }}>Our Facility</h3>
+          <h3 style={{ textAlign: "center", marginBottom: "15px", color: "var(--text-dark)", fontSize: "1.3rem" }}>Expert Services</h3>
           <p style={{ color: "var(--text-muted)", textAlign: "center", lineHeight: "1.6" }}>
-            We operate out of the Paradise Garden Events Pavilion, bringing a serene, welcoming environment to all our clients and patients.
+            We offer expert facial care, slimming treatments, massage, hair, and nail services—all designed to enhance your natural beauty.
           </p>
         </div>
 
@@ -25,9 +25,9 @@ export default function AboutPage() {
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px", color: "var(--primary-color)" }}>
             <Award size={48} />
           </div>
-          <h3 style={{ textAlign: "center", marginBottom: "15px", color: "var(--text-dark)", fontSize: "1.3rem" }}>Our Standards</h3>
+          <h3 style={{ textAlign: "center", marginBottom: "15px", color: "var(--text-dark)", fontSize: "1.3rem" }}>Quality & Value</h3>
           <p style={{ color: "var(--text-muted)", textAlign: "center", lineHeight: "1.6" }}>
-            We provide a vast range of carefully vetted products—from essential daily vitamins to specialized treatments—ensuring top-tier quality control and affordability.
+            With a perfect balance of quality, affordability, and personalized care, we ensure our clients always receive the best.
           </p>
         </div>
 
@@ -35,9 +35,9 @@ export default function AboutPage() {
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px", color: "var(--primary-color)" }}>
             <Heart size={48} />
           </div>
-          <h3 style={{ textAlign: "center", marginBottom: "15px", color: "var(--text-dark)", fontSize: "1.3rem" }}>Our Mission</h3>
+          <h3 style={{ textAlign: "center", marginBottom: "15px", color: "var(--text-dark)", fontSize: "1.3rem" }}>Our Commitment</h3>
           <p style={{ color: "var(--text-muted)", textAlign: "center", lineHeight: "1.6" }}>
-            To foster physical and emotional well-being by delivering exceptional health resources, skin care clinic treatments, and transparent pharmaceutical care.
+            We are committed to helping you look and feel your best—confident, radiant, and truly glamorous.
           </p>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default function AboutPage() {
       <div style={{ marginTop: "80px", textAlign: "center", padding: "40px", background: "white", borderRadius: "var(--border-radius)", boxShadow: "var(--shadow-sm)" }}>
         <h2 style={{ color: "var(--text-dark)", marginBottom: "20px" }}>Experience the Difference</h2>
         <p style={{ color: "var(--text-muted)", maxWidth: "600px", margin: "0 auto 30px", lineHeight: "1.6" }}>
-          We invite you to explore our carefully crafted catalog online or visit our physical storefront at 6014 H. Abellana St. Our expert staff represents a commitment to excellence, supporting your journey to lasting health.
+          We invite you to explore our internationally available product catalog dropshipped right to your door, or visit our physical clinic locations locally.
         </p>
         <a href="/products" className="btn btn-primary">Browse Catalog</a>
       </div>

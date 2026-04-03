@@ -1,5 +1,6 @@
 import styles from "./Hero.module.css";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
@@ -17,7 +18,9 @@ export default function Hero() {
             Shop Now <ArrowRight size={20} />
           </Link>
         </div>
-        <div className={styles.heroGraphic}></div>
+        <div className={styles.heroGraphic}>
+          <Image src="/hero.png" alt="Natural Skincare and Wellness Products" fill style={{ objectFit: "cover" }} priority />
+        </div>
       </div>
     </section>
   );

@@ -23,10 +23,33 @@ model Product {
 
 model Order {
   id              String      @id @default(cuid())
-  customerName    String
+  
+  // Contact Info
   customerEmail   String
-  customerAddress String
+  emailMeUpdates  Boolean     @default(false)
+  
+  // Delivery Info
+  country         String      @default("Philippines")
+  firstName       String
+  lastName        String
+  address         String
+  apartment       String?
+  postalCode      String
+  city            String
+  region          String
+  phone           String?
+  textMeUpdates   Boolean     @default(false)
+  
+  // Order financials
   totalAmount     Float
+  productCost     Float       @default(0)
+  shippingCost    Float       @default(0)
+  
+  // Fulfillment / Dropshipping
+  shippingMethod  String      @default("Standard")
+  trackingNo      String?
+  shipmentStatus  String      @default("PENDING") // PENDING, PROCESSING, SHIPPED, IN_TRANSIT, DELIVERED, CANCELLED
+  
   status          String      @default("PENDING") // PENDING, PAID, SHIPPED, DELIVERED, CANCELLED
   payPalReference String?
   createdAt       DateTime    @default(now())

@@ -55,6 +55,7 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
           <Link href="/products" className={`${styles.link} ${pathname === '/products' || pathname.startsWith('/products/') ? styles.activeLink : ''}`} onClick={() => setMenuOpen(false)}>Products</Link>
           <Link href="/about" className={`${styles.link} ${pathname === '/about' ? styles.activeLink : ''}`} onClick={() => setMenuOpen(false)}>About Us</Link>
           <Link href="/contact" className={`${styles.link} ${pathname === '/contact' ? styles.activeLink : ''}`} onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link href="/custom-order" className={`${styles.link} ${pathname === '/custom-order' ? styles.activeLink : ''}`} onClick={() => setMenuOpen(false)}>Custom Order</Link>
         </nav>
 
         <div className={styles.actions}>

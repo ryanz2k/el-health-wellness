@@ -26,6 +26,11 @@ export async function loginAction(prevState: any, formData: FormData) {
 
 export async function logoutAction() {
   const cookieStore = await cookies();
-  cookieStore.delete("admin_session");
+  cookieStore.set("admin_session", "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 0,
+    path: "/",
+  });
   redirect("/admin/login");
 }

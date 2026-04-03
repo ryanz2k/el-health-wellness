@@ -1,6 +1,6 @@
 .footer {
-  background-color: var(--text-dark);
-  color: var(--white);
+  background-color: var(--secondary-color);
+  color: var(--text-dark);
   padding: 60px 0 20px 0;
   margin-top: 60px;
 }
@@ -15,12 +15,12 @@
 .column h3 {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color: var(--primary-light);
+  color: var(--primary-color);
   font-weight: 600;
 }
 
 .column p {
-  color: #a0b2b8;
+  color: var(--text-muted);
   margin-bottom: 15px;
   line-height: 1.8;
   display: flex;
@@ -38,20 +38,20 @@
 }
 
 .linkList a {
-  color: #a0b2b8;
+  color: var(--text-muted);
   text-decoration: none;
   transition: var(--transition);
 }
 
 .linkList a:hover {
-  color: var(--primary-light);
+  color: var(--primary-color);
   padding-left: 5px;
 }
 
 .bottomBar {
   padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(0,0,0,0.05);
   text-align: center;
-  color: #a0b2b8;
+  color: var(--text-muted);
   font-size: 0.9rem;
 }

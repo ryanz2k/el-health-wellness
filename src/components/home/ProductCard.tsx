@@ -26,7 +26,7 @@ export default function ProductCard({ product }: ProductProps) {
       name: product.name,
       price: product.price,
       quantity: quantity,
-      image: product.image
+      image: `/stock/${(product.id.charCodeAt(0) + product.id.charCodeAt(product.id.length - 1)) % 4 + 1}.png`
     });
     
     setIsAdded(true);
@@ -48,10 +48,15 @@ export default function ProductCard({ product }: ProductProps) {
 
   return (
     <div className={`${styles.card} glass-panel`}>
-      <div className={styles.imageWrapper}>
-        <div className={styles.placeholderImage}>
-           {/* Fallback pattern for placeholders */}
-           <div className={styles.imgLabel}>{product.category}</div>
+      <div className={styles.imageWrapper} style={{ position: "relative", overflow: "hidden" }}>
+        <Image 
+          src={`/stock/${(product.id.charCodeAt(0) + product.id.charCodeAt(product.id.length - 1)) % 4 + 1}.png`} 
+          alt={product.name} 
+          fill 
+          style={{ objectFit: 'cover' }} 
+        />
+        <div className={styles.imgLabel} style={{ position: "absolute", bottom: "10px", right: "10px", background: "rgba(255,255,255,0.9)", zIndex: 2, padding: "2px 8px", borderRadius: "10px", fontSize: "0.7rem", fontWeight: "bold" }}>
+          {product.category}
         </div>
       </div>
       <div className={styles.productInfo}>

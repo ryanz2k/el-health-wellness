@@ -100,13 +100,33 @@ async function main() {
         date.setDate(date.getDate() - Math.floor(Math.random() * 30)); // random date within last 30 days
         
         const statuses = ["PENDING", "PAID", "SHIPPED", "DELIVERED"];
+        const shipmentStatuses = ["PENDING", "PROCESSING", "SHIPPED", "IN_TRANSIT", "DELIVERED"];
+        const firstNames = ["Alice", "Mark", "Sarah", "David", "Maria", "Jose", "Anna", "Carlos", "Elena", "Miguel", "Julia", "Roberto", "Sofia", "Juan", "Carmen"];
+        const lastNames = ["Johnson", "Stevenson", "Miller", "Rossi", "Santos", "Garcia", "Cruz", "Reyes", "Torres", "Fernandez", "Lopez", "Rivera", "Ramos", "Aquino", "Dela Cruz"];
+        const cities = ["Cebu City", "Manila", "Davao", "Quezon City", "Makati"];
+        const regions = ["Cebu", "Metro Manila", "Davao del Sur", "NCR", "Metro Manila"];
+        const shippingMethods = ["Standard", "Express", "Economy"];
 
         await prisma.order.create({
           data: {
-            customerName: `Customer ${i + 1}`,
             customerEmail: `customer${i + 1}@example.com`,
-            customerAddress: `${Math.floor(Math.random() * 9000) + 1000} Wellness Ave, City ${i + 1}`,
+            emailMeUpdates: Math.random() > 0.5,
+            country: "Philippines",
+            firstName: firstNames[i],
+            lastName: lastNames[i],
+            address: `${Math.floor(Math.random() * 9000) + 1000} Wellness Ave`,
+            apartment: Math.random() > 0.5 ? `Unit ${Math.floor(Math.random() * 500)}` : null,
+            postalCode: `${Math.floor(Math.random() * 9000) + 1000}`,
+            city: cities[Math.floor(Math.random() * cities.length)],
+            region: regions[Math.floor(Math.random() * regions.length)],
+            phone: `+63 9${Math.floor(Math.random() * 100000000 + 100000000)}`,
+            textMeUpdates: false,
             totalAmount: orderTotal,
+            productCost: orderTotal * 0.6,
+            shippingCost: Math.floor(Math.random() * 300) + 100,
+            shippingMethod: shippingMethods[Math.floor(Math.random() * shippingMethods.length)],
+            trackingNo: Math.random() > 0.5 ? `TRK${Date.now().toString(36).toUpperCase()}${i}` : null,
+            shipmentStatus: shipmentStatuses[Math.floor(Math.random() * shipmentStatuses.length)],
             status: statuses[Math.floor(Math.random() * statuses.length)],
             createdAt: date,
             items: {

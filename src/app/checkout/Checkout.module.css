@@ -1,0 +1,243 @@
+.checkoutContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 0;
+}
+
+@media (min-width: 900px) {
+  .checkoutContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.leftColumn, .rightColumn {
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.leftColumn {
+  background-color: var(--background-light);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.leftContent {
+  width: 100%;
+  max-width: 600px;
+}
+
+@media (min-width: 900px) {
+  .leftColumn {
+    width: 55%;
+    padding-right: 40px;
+    border-right: 1px solid #e8e8e8;
+  }
+}
+
+.rightColumn {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.rightContent {
+  width: 100%;
+  max-width: 450px;
+}
+
+@media (min-width: 900px) {
+  .rightColumn {
+    width: 45%;
+    padding-left: 40px;
+  }
+}
+
+/* Form Styles */
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.formRow {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.formGroup {
+  flex: 1;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.formRow .formGroup {
+  margin-bottom: 0;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background-color: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 0 1px transparent;
+  color: #333;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 10px);
+  background-position-y: 50%;
+  cursor: pointer;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Right side items */
+.itemCard {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.itemImageContainer {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.itemBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: rgba(114, 114, 114, 0.9);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemDetails {
+  flex: 1;
+}
+
+.itemName {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.itemPrice {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.discountRow {
+  display: flex;
+  gap: 10px;
+  margin: 25px 0;
+  padding: 25px 0;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.discountBtn {
+  background-color: #ededed;
+  color: #909090;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  padding: 0 20px;
+  font-weight: 500;
+  cursor: not-allowed;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-bottom: 1px solid #e8e8e8;
+  color: #333;
+}
+
+/* Payment section */
+.paymentNotice {
+  padding: 18px;
+  background-color: #fff8e1;
+  color: #8a6d3b;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid #ffeeba;
+}
+
+.paymentBox {
+  margin-top: 10px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+}

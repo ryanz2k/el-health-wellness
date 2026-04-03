@@ -3,15 +3,13 @@
 import { useCartStore } from "@/store/useCartStore";
 import styles from "./Cart.module.css";
 import Link from "next/link";
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
 
 export default function CartPage() {
   const [mounted, setMounted] = useState(false);
-  const router = useRouter();
-  const { items, updateQuantity, removeItem, getTotals, clearCart } = useCartStore();
+  const { items, updateQuantity, removeItem, getTotals } = useCartStore();
   const { total } = getTotals();
 
   useEffect(() => {
@@ -44,7 +42,9 @@ export default function CartPage() {
         <div className={styles.cartItems}>
           {items.map((item) => (
             <div key={item.id} className={styles.itemCard}>
-              <div className={styles.itemImage}>IMAGE</div>
+              <div className={styles.itemImage} style={{ position: "relative", overflow: "hidden" }}>
+                <Image src={`/stock/${(item.id.charCodeAt(0) + item.id.charCodeAt(item.id.length - 1)) % 4 + 1}.png`} alt={item.name} fill style={{ objectFit: 'cover' }} />
+              </div>
               <div className={styles.itemDetails}>
                 <h3 className={styles.itemName}>{item.name}</h3>
                 <p className={styles.itemPrice}>₱{item.price.toFixed(2)}</p>
@@ -89,35 +89,13 @@ export default function CartPage() {
           </div>
 
           <div style={{ marginTop: "30px" }}>
-            <PayPalScriptProvider options={{ clientId: "test", currency: "PHP" }}>
-              <PayPalButtons 
-                style={{ layout: "vertical", shape: "rect", color: "gold" }}
-                createOrder={(data, actions) => {
-                  return actions.order.create({
-                    intent: "CAPTURE",
-                    purchase_units: [
-                      {
-                        amount: {
-                          currency_code: "PHP",
-                          value: total.toFixed(2),
-                        },
-                      },
-                    ],
-                  });
-                }}
-                onApprove={async (data, actions) => {
-                  if (actions.order) {
-                    const details = await actions.order.capture();
-                    // Here we would typically save to the SQLite database
-                    
-                    const payerName = details.payer?.name?.given_name || "Customer";
-                    const orderId = details.id || data.orderID;
-                    
-                    router.push(`/checkout/success?name=${encodeURIComponent(payerName)}&orderId=${orderId}`);
-                  }
-                }}
-              />
-            </PayPalScriptProvider>
+            <Link 
+              href="/checkout" 
+              className="btn btn-primary" 
+              style={{ width: "100%", padding: "15px", fontSize: "1.1rem" }}
+            >
+              Proceed to Checkout
+            </Link>
           </div>
         </div>
       </div>

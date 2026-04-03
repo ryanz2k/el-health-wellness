@@ -1,13 +1,15 @@
 .adminContainer {
   display: flex;
   flex: 1;
+  min-height: calc(100vh - 80px);
   background-color: #f8fafc;
 }
 
 .sidebar {
   width: 260px;
-  background-color: var(--text-dark);
-  color: white;
+  background-color: #ffffff;
+  color: var(--text-dark);
+  box-shadow: 2px 0 15px rgba(0,0,0,0.03);
   display: flex;
   flex-direction: column;
   padding: 30px 20px;
@@ -21,11 +23,11 @@
   gap: 12px;
   margin-bottom: 40px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid #eaeaea;
 }
 
 .sidebarIcon {
-  color: var(--primary-light);
+  color: var(--primary-color);
 }
 
 .sidebarNav {
@@ -36,7 +38,7 @@
 }
 
 .navLink {
-  color: #a0b2b8;
+  color: var(--text-dark);
   text-decoration: none;
   font-weight: 500;
   padding: 12px 16px;
@@ -44,9 +46,14 @@
   transition: var(--transition);
 }
 
+.activeNavLink {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
 .navLink:hover {
-  background-color: rgba(255,255,255,0.05);
-  color: white;
+  background-color: #fef0f5;
+  color: var(--primary-color);
 }
 
 .mainContent {
@@ -195,6 +202,9 @@
   border-radius: 50px;
   font-size: 0.8rem;
   font-weight: 600;
+  white-space: nowrap;
+  min-width: 60px;
+  text-align: center;
 }
 
 .status-paid {
@@ -205,4 +215,14 @@
 .status-pending {
   background: #fef9c3;
   color: #854d0e;
+}
+
+.status-shipped {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-cancelled {
+  background: #fee2e2;
+  color: #991b1b;
 }
