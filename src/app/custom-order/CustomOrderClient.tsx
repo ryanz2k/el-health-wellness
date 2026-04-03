@@ -5,7 +5,7 @@ import { Search, Send, CheckCircle, Plus, X, Image as ImageIcon } from "lucide-r
 import Image from "next/image";
 import { sendCustomOrder } from "@/app/actions/sendCustomOrder";
 
-type Product = { id: string; name: string; price: number; category: string; imageUrl: string };
+type Product = { id: string; name: string; price: number; category: string; imageUrl: string | null };
 type UploadedFile = { file: File; preview: string };
 
 export default function CustomOrderClient({ products }: { products: Product[] }) {
